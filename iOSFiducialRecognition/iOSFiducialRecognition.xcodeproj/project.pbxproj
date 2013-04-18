@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		285B48CB17201ED100134D9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285B48CA17201ED100134D9B /* UIKit.framework */; };
+		285B48CD17201ED100134D9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285B48CC17201ED100134D9B /* Foundation.framework */; };
+		285B48CF17201ED100134D9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285B48CE17201ED100134D9B /* CoreGraphics.framework */; };
+		285B48E717201ED100134D9B /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 285B48E517201ED100134D9B /* ViewController.xib */; };
+		285B48F41720201E00134D9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B48EF1720201E00134D9B /* AppDelegate.m */; };
+		285B48F51720201E00134D9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B48F11720201E00134D9B /* main.m */; };
+		285B48F61720201E00134D9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B48F31720201E00134D9B /* ViewController.m */; };
+		285B48FC1720204700134D9B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 285B48F81720204700134D9B /* Default-568h@2x.png */; };
+		285B48FD1720204700134D9B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 285B48F91720204700134D9B /* Default.png */; };
+		285B48FE1720204700134D9B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 285B48FA1720204700134D9B /* Default@2x.png */; };
+		285B49011720214300134D9B /* testscene1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 285B49001720214300134D9B /* testscene1.jpg */; };
+		285B49241720219A00134D9B /* EqualizerFrameProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B49061720219A00134D9B /* EqualizerFrameProcessor.m */; };
+		285B49251720219A00134D9B /* FidFinderFrameProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B49081720219A00134D9B /* FidFinderFrameProcessor.m */; };
+		285B49261720219A00134D9B /* ThresholderFrameProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B490B1720219A00134D9B /* ThresholderFrameProcessor.m */; };
+		285B49291720219A00134D9B /* dump_graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 285B49101720219A00134D9B /* dump_graph.c */; };
+		285B492A1720219A00134D9B /* fidtrack120.c in Sources */ = {isa = PBXBuildFile; fileRef = 285B49121720219A00134D9B /* fidtrack120.c */; };
+		285B492B1720219A00134D9B /* fidtrackX.c in Sources */ = {isa = PBXBuildFile; fileRef = 285B49141720219A00134D9B /* fidtrackX.c */; };
+		285B492D1720219A00134D9B /* segment.c in Sources */ = {isa = PBXBuildFile; fileRef = 285B49181720219A00134D9B /* segment.c */; };
+		285B492E1720219A00134D9B /* threshold.c in Sources */ = {isa = PBXBuildFile; fileRef = 285B491A1720219A00134D9B /* threshold.c */; };
+		285B492F1720219A00134D9B /* tiled_bernsen_threshold.c in Sources */ = {isa = PBXBuildFile; fileRef = 285B491C1720219A00134D9B /* tiled_bernsen_threshold.c */; };
+		285B49301720219A00134D9B /* topologysearch.c in Sources */ = {isa = PBXBuildFile; fileRef = 285B491E1720219A00134D9B /* topologysearch.c */; };
+		285B49311720219A00134D9B /* treeidmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 285B49201720219A00134D9B /* treeidmap.cpp */; };
+		285B49321720219A00134D9B /* Tracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B49231720219A00134D9B /* Tracker.m */; };
+		285B4936172021AD00134D9B /* TrackableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B4935172021AD00134D9B /* TrackableObject.m */; };
+		285B493C172021BA00134D9B /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B493B172021BA00134D9B /* Tools.m */; };
+		285B4944172021C400134D9B /* DebugOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B493F172021C400134D9B /* DebugOverlayView.m */; };
+		285B4945172021C400134D9B /* OverlayRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B4941172021C400134D9B /* OverlayRegion.m */; };
+		285B4946172021C400134D9B /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B4943172021C400134D9B /* OverlayView.m */; };
+		285B4948172021FB00134D9B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285B4947172021FB00134D9B /* AVFoundation.framework */; };
+		285B494A1720220900134D9B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285B49491720220900134D9B /* CoreMedia.framework */; };
+		285B494C1720221400134D9B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285B494B1720221400134D9B /* CoreVideo.framework */; };
+		285B494E1720221E00134D9B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285B494D1720221E00134D9B /* QuartzCore.framework */; };
+		285B4951172022CB00134D9B /* CamCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B4950172022CB00134D9B /* CamCapture.m */; };
+		285B49541720231C00134D9B /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 285B49531720231C00134D9B /* CameraView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		285B48C717201ED100134D9B /* iOSFiducialRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSFiducialRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		285B48CA17201ED100134D9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		285B48CC17201ED100134D9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		285B48CE17201ED100134D9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		285B48E617201ED100134D9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		285B48EE1720201E00134D9B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		285B48EF1720201E00134D9B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		285B48F01720201E00134D9B /* iOSFiducialRecognition-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iOSFiducialRecognition-Prefix.pch"; sourceTree = "<group>"; };
+		285B48F11720201E00134D9B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		285B48F21720201E00134D9B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		285B48F31720201E00134D9B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		285B48F81720204700134D9B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		285B48F91720204700134D9B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		285B48FA1720204700134D9B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		285B48FB1720204700134D9B /* iOSFiducialRecognition-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iOSFiducialRecognition-Info.plist"; sourceTree = "<group>"; };
+		285B49001720214300134D9B /* testscene1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testscene1.jpg; sourceTree = "<group>"; };
+		285B49031720219A00134D9B /* cv_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cv_types.h; sourceTree = "<group>"; };
+		285B49051720219A00134D9B /* EqualizerFrameProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqualizerFrameProcessor.h; sourceTree = "<group>"; };
+		285B49061720219A00134D9B /* EqualizerFrameProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EqualizerFrameProcessor.m; sourceTree = "<group>"; };
+		285B49071720219A00134D9B /* FidFinderFrameProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FidFinderFrameProcessor.h; sourceTree = "<group>"; };
+		285B49081720219A00134D9B /* FidFinderFrameProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FidFinderFrameProcessor.m; sourceTree = "<group>"; };
+		285B49091720219A00134D9B /* FrameProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameProcessor.h; sourceTree = "<group>"; };
+		285B490A1720219A00134D9B /* ThresholderFrameProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThresholderFrameProcessor.h; sourceTree = "<group>"; };
+		285B490B1720219A00134D9B /* ThresholderFrameProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThresholderFrameProcessor.m; sourceTree = "<group>"; };
+		285B490D1720219A00134D9B /* all.trees */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = all.trees; sourceTree = "<group>"; };
+		285B490E1720219A00134D9B /* changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changelog.txt; sourceTree = "<group>"; };
+		285B490F1720219A00134D9B /* default_trees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = default_trees.h; sourceTree = "<group>"; };
+		285B49101720219A00134D9B /* dump_graph.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dump_graph.c; sourceTree = "<group>"; };
+		285B49111720219A00134D9B /* dump_graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dump_graph.h; sourceTree = "<group>"; };
+		285B49121720219A00134D9B /* fidtrack120.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fidtrack120.c; sourceTree = "<group>"; };
+		285B49131720219A00134D9B /* fidtrack120.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fidtrack120.h; sourceTree = "<group>"; };
+		285B49141720219A00134D9B /* fidtrackX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fidtrackX.c; sourceTree = "<group>"; };
+		285B49151720219A00134D9B /* fidtrackX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fidtrackX.h; sourceTree = "<group>"; };
+		285B49161720219A00134D9B /* floatpoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = floatpoint.h; sourceTree = "<group>"; };
+		285B49171720219A00134D9B /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		285B49181720219A00134D9B /* segment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = segment.c; sourceTree = "<group>"; };
+		285B49191720219A00134D9B /* segment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segment.h; sourceTree = "<group>"; };
+		285B491A1720219A00134D9B /* threshold.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = threshold.c; sourceTree = "<group>"; };
+		285B491B1720219A00134D9B /* threshold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threshold.h; sourceTree = "<group>"; };
+		285B491C1720219A00134D9B /* tiled_bernsen_threshold.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tiled_bernsen_threshold.c; sourceTree = "<group>"; };
+		285B491D1720219A00134D9B /* tiled_bernsen_threshold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tiled_bernsen_threshold.h; sourceTree = "<group>"; };
+		285B491E1720219A00134D9B /* topologysearch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = topologysearch.c; sourceTree = "<group>"; };
+		285B491F1720219A00134D9B /* topologysearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = topologysearch.h; sourceTree = "<group>"; };
+		285B49201720219A00134D9B /* treeidmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = treeidmap.cpp; sourceTree = "<group>"; };
+		285B49211720219A00134D9B /* treeidmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = treeidmap.h; sourceTree = "<group>"; };
+		285B49221720219A00134D9B /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
+		285B49231720219A00134D9B /* Tracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tracker.m; sourceTree = "<group>"; };
+		285B4934172021AD00134D9B /* TrackableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackableObject.h; sourceTree = "<group>"; };
+		285B4935172021AD00134D9B /* TrackableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackableObject.m; sourceTree = "<group>"; };
+		285B4938172021BA00134D9B /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		285B4939172021BA00134D9B /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		285B493A172021BA00134D9B /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		285B493B172021BA00134D9B /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		285B493E172021C400134D9B /* DebugOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugOverlayView.h; sourceTree = "<group>"; };
+		285B493F172021C400134D9B /* DebugOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugOverlayView.m; sourceTree = "<group>"; };
+		285B4940172021C400134D9B /* OverlayRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayRegion.h; sourceTree = "<group>"; };
+		285B4941172021C400134D9B /* OverlayRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayRegion.m; sourceTree = "<group>"; };
+		285B4942172021C400134D9B /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		285B4943172021C400134D9B /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
+		285B4947172021FB00134D9B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		285B49491720220900134D9B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		285B494B1720221400134D9B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		285B494D1720221E00134D9B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		285B494F172022CB00134D9B /* CamCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamCapture.h; sourceTree = "<group>"; };
+		285B4950172022CB00134D9B /* CamCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamCapture.m; sourceTree = "<group>"; };
+		285B49521720231C00134D9B /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
+		285B49531720231C00134D9B /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		285B48C417201ED100134D9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				285B494E1720221E00134D9B /* QuartzCore.framework in Frameworks */,
+				285B494C1720221400134D9B /* CoreVideo.framework in Frameworks */,
+				285B494A1720220900134D9B /* CoreMedia.framework in Frameworks */,
+				285B4948172021FB00134D9B /* AVFoundation.framework in Frameworks */,
+				285B48CB17201ED100134D9B /* UIKit.framework in Frameworks */,
+				285B48CD17201ED100134D9B /* Foundation.framework in Frameworks */,
+				285B48CF17201ED100134D9B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		285B48BE17201ED100134D9B = {
+			isa = PBXGroup;
+			children = (
+				285B48C917201ED100134D9B /* Frameworks */,
+				285B48D017201ED100134D9B /* iOSFiducialRecognition */,
+				285B48C817201ED100134D9B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		285B48C817201ED100134D9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				285B48C717201ED100134D9B /* iOSFiducialRecognition.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		285B48C917201ED100134D9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				285B4947172021FB00134D9B /* AVFoundation.framework */,
+				285B48CE17201ED100134D9B /* CoreGraphics.framework */,
+				285B49491720220900134D9B /* CoreMedia.framework */,
+				285B494B1720221400134D9B /* CoreVideo.framework */,
+				285B48CC17201ED100134D9B /* Foundation.framework */,
+				285B494D1720221E00134D9B /* QuartzCore.framework */,
+				285B48CA17201ED100134D9B /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		285B48D017201ED100134D9B /* iOSFiducialRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				285B48ED1720201E00134D9B /* core */,
+				285B49021720219A00134D9B /* cv */,
+				285B4933172021AD00134D9B /* model */,
+				285B48F71720204700134D9B /* res */,
+				285B4937172021BA00134D9B /* util */,
+				285B493D172021C400134D9B /* view */,
+			);
+			path = iOSFiducialRecognition;
+			sourceTree = "<group>";
+		};
+		285B48ED1720201E00134D9B /* core */ = {
+			isa = PBXGroup;
+			children = (
+				285B48EE1720201E00134D9B /* AppDelegate.h */,
+				285B48EF1720201E00134D9B /* AppDelegate.m */,
+				285B48F01720201E00134D9B /* iOSFiducialRecognition-Prefix.pch */,
+				285B48F11720201E00134D9B /* main.m */,
+				285B48F21720201E00134D9B /* ViewController.h */,
+				285B48F31720201E00134D9B /* ViewController.m */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		285B48F71720204700134D9B /* res */ = {
+			isa = PBXGroup;
+			children = (
+				285B49001720214300134D9B /* testscene1.jpg */,
+				285B48F81720204700134D9B /* Default-568h@2x.png */,
+				285B48F91720204700134D9B /* Default.png */,
+				285B48FA1720204700134D9B /* Default@2x.png */,
+				285B48FB1720204700134D9B /* iOSFiducialRecognition-Info.plist */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		285B49021720219A00134D9B /* cv */ = {
+			isa = PBXGroup;
+			children = (
+				285B494F172022CB00134D9B /* CamCapture.h */,
+				285B4950172022CB00134D9B /* CamCapture.m */,
+				285B49031720219A00134D9B /* cv_types.h */,
+				285B49041720219A00134D9B /* frameproc */,
+				285B490C1720219A00134D9B /* libfidtrack */,
+				285B49221720219A00134D9B /* Tracker.h */,
+				285B49231720219A00134D9B /* Tracker.m */,
+			);
+			path = cv;
+			sourceTree = "<group>";
+		};
+		285B49041720219A00134D9B /* frameproc */ = {
+			isa = PBXGroup;
+			children = (
+				285B49051720219A00134D9B /* EqualizerFrameProcessor.h */,
+				285B49061720219A00134D9B /* EqualizerFrameProcessor.m */,
+				285B49071720219A00134D9B /* FidFinderFrameProcessor.h */,
+				285B49081720219A00134D9B /* FidFinderFrameProcessor.m */,
+				285B49091720219A00134D9B /* FrameProcessor.h */,
+				285B490A1720219A00134D9B /* ThresholderFrameProcessor.h */,
+				285B490B1720219A00134D9B /* ThresholderFrameProcessor.m */,
+			);
+			path = frameproc;
+			sourceTree = "<group>";
+		};
+		285B490C1720219A00134D9B /* libfidtrack */ = {
+			isa = PBXGroup;
+			children = (
+				285B490D1720219A00134D9B /* all.trees */,
+				285B490E1720219A00134D9B /* changelog.txt */,
+				285B490F1720219A00134D9B /* default_trees.h */,
+				285B49101720219A00134D9B /* dump_graph.c */,
+				285B49111720219A00134D9B /* dump_graph.h */,
+				285B49121720219A00134D9B /* fidtrack120.c */,
+				285B49131720219A00134D9B /* fidtrack120.h */,
+				285B49141720219A00134D9B /* fidtrackX.c */,
+				285B49151720219A00134D9B /* fidtrackX.h */,
+				285B49161720219A00134D9B /* floatpoint.h */,
+				285B49171720219A00134D9B /* license.txt */,
+				285B49181720219A00134D9B /* segment.c */,
+				285B49191720219A00134D9B /* segment.h */,
+				285B491A1720219A00134D9B /* threshold.c */,
+				285B491B1720219A00134D9B /* threshold.h */,
+				285B491C1720219A00134D9B /* tiled_bernsen_threshold.c */,
+				285B491D1720219A00134D9B /* tiled_bernsen_threshold.h */,
+				285B491E1720219A00134D9B /* topologysearch.c */,
+				285B491F1720219A00134D9B /* topologysearch.h */,
+				285B49201720219A00134D9B /* treeidmap.cpp */,
+				285B49211720219A00134D9B /* treeidmap.h */,
+			);
+			path = libfidtrack;
+			sourceTree = "<group>";
+		};
+		285B4933172021AD00134D9B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				285B4934172021AD00134D9B /* TrackableObject.h */,
+				285B4935172021AD00134D9B /* TrackableObject.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		285B4937172021BA00134D9B /* util */ = {
+			isa = PBXGroup;
+			children = (
+				285B4938172021BA00134D9B /* Config.h */,
+				285B4939172021BA00134D9B /* Singleton.h */,
+				285B493A172021BA00134D9B /* Tools.h */,
+				285B493B172021BA00134D9B /* Tools.m */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		285B493D172021C400134D9B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				285B49521720231C00134D9B /* CameraView.h */,
+				285B49531720231C00134D9B /* CameraView.m */,
+				285B493E172021C400134D9B /* DebugOverlayView.h */,
+				285B493F172021C400134D9B /* DebugOverlayView.m */,
+				285B4940172021C400134D9B /* OverlayRegion.h */,
+				285B4941172021C400134D9B /* OverlayRegion.m */,
+				285B4942172021C400134D9B /* OverlayView.h */,
+				285B4943172021C400134D9B /* OverlayView.m */,
+				285B48E517201ED100134D9B /* ViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		285B48C617201ED100134D9B /* iOSFiducialRecognition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 285B48EA17201ED100134D9B /* Build configuration list for PBXNativeTarget "iOSFiducialRecognition" */;
+			buildPhases = (
+				285B48C317201ED100134D9B /* Sources */,
+				285B48C417201ED100134D9B /* Frameworks */,
+				285B48C517201ED100134D9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSFiducialRecognition;
+			productName = iOSFiducialRecognition;
+			productReference = 285B48C717201ED100134D9B /* iOSFiducialRecognition.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		285B48BF17201ED100134D9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "INKA Research Group";
+			};
+			buildConfigurationList = 285B48C217201ED100134D9B /* Build configuration list for PBXProject "iOSFiducialRecognition" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 285B48BE17201ED100134D9B;
+			productRefGroup = 285B48C817201ED100134D9B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				285B48C617201ED100134D9B /* iOSFiducialRecognition */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		285B48C517201ED100134D9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				285B48E717201ED100134D9B /* ViewController.xib in Resources */,
+				285B48FC1720204700134D9B /* Default-568h@2x.png in Resources */,
+				285B48FD1720204700134D9B /* Default.png in Resources */,
+				285B48FE1720204700134D9B /* Default@2x.png in Resources */,
+				285B49011720214300134D9B /* testscene1.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		285B48C317201ED100134D9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				285B48F41720201E00134D9B /* AppDelegate.m in Sources */,
+				285B48F51720201E00134D9B /* main.m in Sources */,
+				285B48F61720201E00134D9B /* ViewController.m in Sources */,
+				285B49241720219A00134D9B /* EqualizerFrameProcessor.m in Sources */,
+				285B49251720219A00134D9B /* FidFinderFrameProcessor.m in Sources */,
+				285B49261720219A00134D9B /* ThresholderFrameProcessor.m in Sources */,
+				285B49291720219A00134D9B /* dump_graph.c in Sources */,
+				285B492A1720219A00134D9B /* fidtrack120.c in Sources */,
+				285B492B1720219A00134D9B /* fidtrackX.c in Sources */,
+				285B492D1720219A00134D9B /* segment.c in Sources */,
+				285B492E1720219A00134D9B /* threshold.c in Sources */,
+				285B492F1720219A00134D9B /* tiled_bernsen_threshold.c in Sources */,
+				285B49301720219A00134D9B /* topologysearch.c in Sources */,
+				285B49311720219A00134D9B /* treeidmap.cpp in Sources */,
+				285B49321720219A00134D9B /* Tracker.m in Sources */,
+				285B4936172021AD00134D9B /* TrackableObject.m in Sources */,
+				285B493C172021BA00134D9B /* Tools.m in Sources */,
+				285B4944172021C400134D9B /* DebugOverlayView.m in Sources */,
+				285B4945172021C400134D9B /* OverlayRegion.m in Sources */,
+				285B4946172021C400134D9B /* OverlayView.m in Sources */,
+				285B4951172022CB00134D9B /* CamCapture.m in Sources */,
+				285B49541720231C00134D9B /* CameraView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		285B48E517201ED100134D9B /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				285B48E617201ED100134D9B /* en */,
+			);
+			name = ViewController.xib;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		285B48E817201ED100134D9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		285B48E917201ED100134D9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		285B48EB17201ED100134D9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Markus Konrad (S425H7793T)";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iOSFiducialRecognition/core/iOSFiducialRecognition-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/iOSFiducialRecognition/res/iOSFiducialRecognition-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "86B63E28-E842-4BDB-B698-9CC55D539E97";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		285B48EC17201ED100134D9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iOSFiducialRecognition/core/iOSFiducialRecognition-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/iOSFiducialRecognition/res/iOSFiducialRecognition-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		285B48C217201ED100134D9B /* Build configuration list for PBXProject "iOSFiducialRecognition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				285B48E817201ED100134D9B /* Debug */,
+				285B48E917201ED100134D9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		285B48EA17201ED100134D9B /* Build configuration list for PBXNativeTarget "iOSFiducialRecognition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				285B48EB17201ED100134D9B /* Debug */,
+				285B48EC17201ED100134D9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 285B48BF17201ED100134D9B /* Project object */;
+}

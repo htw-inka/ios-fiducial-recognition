@@ -1,0 +1,11 @@
+# xcode noise
+*xcuserdata/*
+*.pbxuser
+*.mode1v3
+
+iOSFiducialRecognition/iOSFiducialRecognition.xcodeproj/project.xcworkspace/xcuserdata/
+iOSFiducialRecognition/iOSFiducialRecognition.xcodeproj/xcuserdata/
+
+# osx noise
+*.DS_Store
+
