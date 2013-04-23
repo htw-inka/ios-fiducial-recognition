@@ -47,15 +47,25 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @interface OverlayRegion : CALayer {
     CGColorRef baseColor;
+    CGColorRef activeColor;
+    
+    CGColorRef baseColorBG;
+    CGColorRef activeColorBG;
+    
+    CGColorRef *curColor;
+    CGColorRef *curColorBG;
 }
 
 @property (nonatomic, readonly) CABasicAnimation *anim;
 @property (nonatomic, assign) int markerId;
+@property (nonatomic, assign) BOOL active;
 
 +(id)overlayRegionWithMarkerId:(int)mId initialRect:(CGRect)r;
 
 -(id)initWithMarkerId:(int)mId initialRect:(CGRect)r;
 
 -(void)updateRect:(CGRect)r inAnimationInterval:(CFTimeInterval)sec;
+
+-(BOOL)toggleActive;
 
 @end

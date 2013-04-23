@@ -53,6 +53,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     CGSize frameSize;
     Tracker *tracker;   // reference to singleton
     NSMutableDictionary *detectedObjects;   // dictionary with NSNumber (marker id) -> TrackableObject mapping
+    TrackableObject *activeObject;  // reference to currently activated object
 }
 
 @property (nonatomic, retain) AVCaptureVideoPreviewLayer *previewLayerRef;

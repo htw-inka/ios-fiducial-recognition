@@ -77,51 +77,27 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #pragma mark parent methods
 
-- (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    // get touch position
+    UITouch *touch = [touches anyObject];
+    CGPoint p = [touch locationInView:self];
     
-    
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-
-    // set fill color & stroke width
-    CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);
-    CGContextSetLineWidth(ctx, 1.0);
-    CGContextSetFillColorWithColor(ctx, [UIColor redColor].CGColor);
-    
-    // set font
-    CGContextSelectFont(ctx, "Courier New", 14, kCGEncodingMacRoman);
-    CGContextSetCharacterSpacing(ctx, 1);
-    CGContextSetTextDrawingMode(ctx, kCGTextFillStroke);
-    
-    // flip view matrix for text
-    CGAffineTransform flipTransform = CGAffineTransformConcat(CGAffineTransformMakeTranslation(0.f, self.bounds.size.height),
-                                                              CGAffineTransformMakeScale(1.f, -1.f));
-    
-    CGContextSetTextMatrix(ctx, flipTransform);
-    
-    // draw lines around each object
-//    NSLog(@"OverlayView: Drawing %d objects", detectedObjects.count);
+    // check if we are in an object's region
+    TrackableObject *touchedObj = nil;
     for (TrackableObject *obj in [detectedObjects allValues]) {
-#if (TARGET_IPHONE_SIMULATOR == 0)
-        // calculate the objects position on the view
-        // first create a point in the scale of 0.0 to 1.0 for the AVCapturePreviewLayer method...
-        CGPoint pointInVideo = { obj.pos.x / frameSize.width, obj.pos.y / frameSize.height };
-        // ... which is used here to convert it to absolute pixel values for the view
-        CGPoint p = [previewLayerRef pointForCaptureDevicePointOfInterest:pointInVideo];
-#else
-        CGPoint p = { obj.pos.x * objPointScaling.x, obj.pos.y * objPointScaling.y };
-#endif
-        
-        // show a little rectangle
-        CGContextAddRect(ctx, RECT_AT_CENTER(p.x, p.y, 3));
-        
-        // show the id
-        NSString *s = [NSString stringWithFormat:@"%d", obj.markerId];
-        CGContextShowTextAtPoint(ctx, p.x + 4, p.y + 4, [s cStringUsingEncoding:NSASCIIStringEncoding], s.length);
+        OverlayRegion *objRegion = obj.overlayRegion;
+        if (CGRectContainsPoint(objRegion.frame, p)) {
+            touchedObj = obj;
+            
+            break;
+        }
     }
     
-    // fill all the objects
-    CGContextFillPath(ctx);
+    // check if we touched an object and if we activated it
+    if (touchedObj && [touchedObj.overlayRegion toggleActive]) {
+        if (activeObject) [activeObject.overlayRegion setActive:NO];  // set previous object to not activated
+        activeObject = touchedObj;
+    }
 }
 
 #pragma mark TrackerDelegate methods
@@ -157,6 +133,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [obj.overlayRegion removeFromSuperlayer];
     [obj setOverlayRegion:NULL];
     
+    if (obj == activeObject) activeObject = nil;
+        
     [detectedObjects removeObjectForKey:[NSNumber numberWithInt:obj.markerId]];
 }
 

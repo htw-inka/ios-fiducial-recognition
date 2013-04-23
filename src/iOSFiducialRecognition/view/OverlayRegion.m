@@ -45,12 +45,19 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "OverlayRegion.h"
 
+#define UPD_VIEW [self setNeedsDisplay];[CATransaction flush];
+
+@interface OverlayRegion ()
+-(void)updateColors;
+@end
+
 @implementation OverlayRegion
 
 @synthesize anim;
 @synthesize markerId;
+@synthesize active;
 
-#pragma mark public methods
+#pragma mark init/dealloc methods
 
 +(id)overlayRegionWithMarkerId:(int)mId initialRect:(CGRect)r {
     return [[[OverlayRegion alloc] initWithMarkerId:mId initialRect:r] autorelease];
@@ -66,8 +73,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         
         // set color
         baseColor = CGColorRetain([UIColor greenColor].CGColor);
-        [self setBackgroundColor:CGColorCreateCopyWithAlpha(baseColor, 0.5f)];
-        [self setBorderColor:baseColor];
+        activeColor = CGColorRetain([UIColor redColor].CGColor);
+        baseColorBG = CGColorCreateCopyWithAlpha([UIColor greenColor].CGColor, 0.5f);
+        activeColorBG = CGColorCreateCopyWithAlpha([UIColor redColor].CGColor, 0.5f);
+        
+        curColor = &baseColor;
+        curColorBG = &baseColorBG;
+        
+        [self setActive:NO];
         
         // create animation
         anim = [[CABasicAnimation alloc] init];
@@ -80,26 +93,24 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -(void)dealloc {
     CGColorRelease(baseColor);
+    CGColorRelease(activeColor);
+    CGColorRelease(baseColorBG);
+    CGColorRelease(activeColorBG);
     
     [anim release];
     
     [super dealloc];
 }
 
--(void)updateRect:(CGRect)r inAnimationInterval:(CFTimeInterval)sec {
-    [anim setDuration:sec];
-    [self setFrame:r];
-    
-    [self setNeedsDisplay];
-}
+#pragma mark parent methods
 
 -(void)drawInContext:(CGContextRef)ctx {    
     [super drawInContext:ctx];
 
     // set fill color & stroke width
     CGContextSetLineWidth(ctx, 1.0);
-    CGContextSetFillColorWithColor(ctx, baseColor);
-    CGContextSetStrokeColorWithColor(ctx, baseColor);
+    CGContextSetFillColorWithColor(ctx, *curColor);
+    CGContextSetStrokeColorWithColor(ctx, *curColor);
     
     // set font
     CGContextSelectFont(ctx, "Courier New", 14, kCGEncodingMacRoman);
@@ -117,6 +128,45 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     CGContextShowTextAtPoint(ctx, self.frame.size.width / 2.0f, self.frame.size.height / 2.0f,
                              [s cStringUsingEncoding:NSASCIIStringEncoding], s.length);
     
+}
+
+#pragma mark public methods
+
+-(void)updateRect:(CGRect)r inAnimationInterval:(CFTimeInterval)sec {
+    [anim setDuration:sec];
+    [self setFrame:r];
+    
+    UPD_VIEW;
+}
+
+-(BOOL)toggleActive {
+    active = !active;
+    
+    [self updateColors];
+    
+    return active;
+}
+
+-(void)setActive:(BOOL)state {
+    active = state;
+    
+    [self updateColors];
+}
+
+#pragma mark private methods
+
+-(void)updateColors {
+    if (active) {
+        curColor = &activeColor;
+        curColorBG = &activeColorBG;
+    } else {
+        curColor = &baseColor;
+        curColorBG = &baseColorBG;
+    }
+    
+    [self setBackgroundColor:*curColorBG];
+    
+    UPD_VIEW;
 }
 
 @end
