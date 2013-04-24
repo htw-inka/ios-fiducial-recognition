@@ -11,7 +11,7 @@ The software has been tested on iPads of the second and third generation but sho
 Performance
 -----------
 
-The current implementation achieves a stable recognition of fiducials in 0.15 to 0.3 seconds on an 3rd gen. iPad, which makes it possible to use in an argmented reality application.
+The current implementation achieves a stable recognition of fiducials in 0.15 to 0.3 seconds on an 3rd gen. iPad, which makes it possible to use in an augmented reality application.
 
 Prerequisites
 -------------
